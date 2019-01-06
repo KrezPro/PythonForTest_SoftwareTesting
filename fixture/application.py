@@ -4,12 +4,14 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
+from fixture.session import SessionHelper
 
 
 class Application:
     def __init__(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
+        self.session = SessionHelper(self)
 
     def See_result(self):
         driver = self.driver
@@ -30,16 +32,6 @@ class Application:
         driver.find_element_by_name("group_footer").send_keys(group.footer)
         driver.find_element_by_name("submit").click()
 
-    def Enter_Login(self, Login, Password):
-        driver = self.driver
-        driver.find_element_by_name("user").click()
-        driver.find_element_by_name("user").clear()
-        driver.find_element_by_name("user").send_keys(Login)
-        driver.find_element_by_id("LoginForm").click()
-        driver.find_element_by_name("pass").click()
-        driver.find_element_by_name("pass").clear()
-        driver.find_element_by_name("pass").send_keys(Password)
-        driver.find_element_by_id("LoginForm").submit()
 
     def Open_home_directory(self):
         driver = self.driver
