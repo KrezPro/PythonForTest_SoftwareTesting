@@ -14,13 +14,13 @@ def app(request):
 def test_untitled_test_case(app):
         app.Open_home_directory()
         app.session.Enter_Login(Login="admin", Password="secret")
-        app.Create_Group(Group(name="rty", header="recfghh", footer="dffgdfgdg"))
-        app.See_result()
+        app.group.Create(Group(name="rty", header="recfghh", footer="dffgdfgdg"))
+
 
 def test_untitled_test_case2(app):
         app.Open_home_directory()
         app.session.Enter_Login(Login="admin", Password="secret")
-        app.Create_Group(Group(name="", header="", footer=""))
-        app.See_result()
+        app.group.Create(Group(name="", header="", footer=""))
+
 
 

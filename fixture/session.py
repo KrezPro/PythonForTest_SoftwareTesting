@@ -17,3 +17,4 @@ class SessionHelper:
         driver.find_element_by_name("pass").clear()
         driver.find_element_by_name("pass").send_keys(Password)
         driver.find_element_by_id("LoginForm").submit()
+
