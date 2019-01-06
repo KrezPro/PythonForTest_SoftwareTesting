@@ -1,15 +1,6 @@
 # -*- coding: utf-8 -*-
-from fixture.application import Application
+
 from model.Group import Group
-import pytest
-
-
-@pytest.fixture()
-def app(request):
-    fixture = Application()
-    request.addfinalizer(fixture.destroy)
-    return fixture
-
 
 def test_untitled_test_case(app):
         app.Open_home_directory()
